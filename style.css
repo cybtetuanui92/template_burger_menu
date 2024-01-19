@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a,
+a:visited {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:hover {
+    color: white;
+}
+
+/* NAVBAR */
+
+nav {
+    background-color: #522bb4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-style: calc(0.5rem + 1.5vw);
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+
+}
+
+/* ID des icones */
+#icons {
+    cursor: pointer;
+    display: none;
+}
+
+
+/* MEDIA QUERIE pour le responsive small/medium screen */
+@media (max-width: 730px) {
+    #icons {
+        display: block;
+    }
+    #icons:before {
+        content: "\2630";
+    }
+    .active #icons:before {
+        content: "\2715";
+    }
+    nav ul {
+        position: fixed;
+        left: -100%;
+        top: 5%;
+        flex-direction: column;
+        background-color: #522bb4;
+        width: 100%;
+        text-align: center;
+        transition: 0.25s;
+        border-radius: 6px;
+    }
+    nav li {
+        padding: 3px 0;
+    }
+    nav li:hover {
+        background: #8b78bc;
+        border-radius: 6px;
+    }
+    nav.active ul {
+        left: 0;
+    }
+}
+
+
